@@ -1,5 +1,4 @@
-﻿
-namespace MauiLoginApp.ViewModels;
+﻿namespace MauiLoginApp.ViewModels;
 
 public partial class LoginViewModel : BaseViewModel
 {
