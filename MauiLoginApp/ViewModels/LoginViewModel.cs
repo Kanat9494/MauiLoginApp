@@ -1,4 +1,5 @@
-﻿namespace MauiLoginApp.ViewModels;
+﻿
+namespace MauiLoginApp.ViewModels;
 
 public partial class LoginViewModel : BaseViewModel
 {
@@ -6,4 +7,10 @@ public partial class LoginViewModel : BaseViewModel
     private string _userName;
     [ObservableProperty]
     private string _password;
+
+    [ICommand]
+    public async void Login()
+    {
+         
+    }
 }
