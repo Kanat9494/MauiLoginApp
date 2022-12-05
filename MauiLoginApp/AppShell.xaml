@@ -4,11 +4,24 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiLoginApp"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:MauiLoginApp.Views"
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="MainPage" />
+        Title="Вход"
+        ContentTemplate="{DataTemplate local:LoginPage}" FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="LoginPage" />
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Главная" ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent Title="Контакты" ContentTemplate="{DataTemplate views:ContactPage}"/>
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Выход" Command="{Binding SignOutCommand}" BackgroundColor="#1d8348"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>

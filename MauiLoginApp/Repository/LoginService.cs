@@ -24,6 +24,6 @@ public class LoginService : ILoginRepository<User>
             }
             return null;
         }
-        catch (Exception ex) { return null }
+        catch (Exception ex) { return null; }
     }
 }
